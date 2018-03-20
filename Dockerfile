@@ -14,7 +14,8 @@ RUN apt-get update && apt-get install -y \
 # Install python packages
 RUN pip3 --no-cache-dir install \
         numpy \
-        scipy
+        scipy \
+        Pillow
 
 # Install TensorFlow CPU version with v1.3.0 with python 3.5
 RUN pip3 --no-cache-dir install --upgrade \
@@ -73,9 +74,7 @@ RUN wget https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip \
 && rm -r /opencv-${OPENCV_VERSION}
 
 # Install Flask
-RUN pip3 --no-cache-dir install \
-        flask \
-        Pillow
+RUN pip3 --no-cache-dir install flask
 
 COPY ./ /app/
 
