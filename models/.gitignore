@@ -1,0 +1,5 @@
+# Model should be scp from Tim's Blackberry
+# Ignore everything in this directory
+*
+# Except this file
+!.gitignore
